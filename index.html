@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Aqiqah | Zayed Elshan Haidarrahman</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f7f5f0;
+  color: #4a4a4a;
+  text-align: center;
+}
+
+section { padding: 50px 16px; }
+
+.cover {
+  min-height: 100vh;
+  background: url('cover.png') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #5b4b3a;
+  background: rgba(255,255,255,0.88);
+  padding: 16px 22px;
+  border-radius: 18px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 28px;
+  max-width: 420px;
+  margin: auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+img.section-img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 22px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 26px;
+  background: #b89b5e;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 14px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.countdown div {
+  background: #f0ece3;
+  border-radius: 14px;
+  padding: 12px;
+  min-width: 70px;
+}
+
+.countdown span {
+  font-size: 22px;
+  font-weight: bold;
+  color: #5b4b3a;
+}
+
+footer {
+  padding: 50px 16px;
+  font-size: 14px;
+  color: #666;
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIK -->
+<audio id="bgm" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.addEventListener('click', function(){
+  document.getElementById('bgm').play();
+},{ once:true });
+</script>
+
+<!-- COVER -->
+<section class="cover">
+  <h1>ZAYED ELSHAN<br>HAIDARRAHMAN</h1>
+</section>
+
+<!-- PEMBUKA -->
+<section>
+  <img src="middle.png" class="section-img">
+  <div class="card">
+    <p>
+      Dengan memohon rahmat dan ridho Allah SWT,  
+      kami mengundang Bapak/Ibu/Saudara/i  
+      untuk berkenan hadir dalam acara aqiqah putra kami:
+    </p>
+    <p style="margin-top:14px;">
+      <strong>Zayed Elshan Haidarrahman</strong><br>
+      Putra dari Bapak <strong>Pathur Rahman</strong>  
+      & Ibu <strong>Rahmawati</strong>
+    </p>
+  </div>
+</section>
+
+<!-- DETAIL ACARA -->
+<section>
+  <div class="card">
+    <h2 style="font-family:'Playfair Display',serif;color:#5b4b3a;">
+      Detail Acara
+    </h2>
+
+    <p><strong>Hari / Tanggal</strong><br>
+    Minggu, 1 Februari 2026</p>
+
+    <p><strong>Waktu</strong><br>
+    Pukul 10.00 WITA – selesai</p>
+
+    <p><strong>Tempat</strong><br>
+    Jl. Pemajatan Komplek Permata Dinar  
+    Blok E/170, Gambut, Banjar 70652</p>
+
+    <a class="btn"
+       href="https://www.google.com/maps?q=-3.4010473,114.6856262"
+       target="_blank">
+       📍 Lihat Lokasi Acara
+    </a>
+
+    <!-- COUNTDOWN -->
+    <div class="countdown">
+      <div><span id="days">0</span><br>Hari</div>
+      <div><span id="hours">0</span><br>Jam</div>
+      <div><span id="minutes">0</span><br>Menit</div>
+      <div><span id="seconds">0</span><br>Detik</div>
+    </div>
+  </div>
+</section>
+
+<!-- HARAPAN ORANG TUA -->
+<section>
+  <img src="hope.png" class="section-img">
+  <div class="card">
+    <p>
+      Dalam setiap langkah kehidupan ananda kelak,  
+      kami berharap tumbuh ikatan kasih sayang yang kuat  
+      antara saudara, saling menjaga, saling menguatkan,  
+      dan menjadi pelindung satu sama lain.
+    </p>
+    <p style="margin-top:12px;">
+      Semoga ananda tumbuh menjadi pribadi yang bertanggung jawab,  
+      berakhlak mulia, serta kelak mampu menjadi  
+      penjaga keharmonisan dan kekuatan bagi keluarga besar,  
+      dengan landasan iman, kasih, dan ketakwaan kepada Allah SWT.
+    </p>
+  </div>
+</section>
+
+<!-- PENUTUP -->
+<footer>
+  <p>
+    Merupakan suatu kehormatan dan kebahagiaan bagi kami  
+    apabila Bapak/Ibu/Saudara/i berkenan hadir  
+    dan memberikan doa restu.
+  </p>
+  <p style="margin-top:16px;">
+    Wassalamu’alaikum Warahmatullahi Wabarakatuh
+  </p>
+  <p style="margin-top:18px;">
+    Hormat kami,<br>
+    <strong>Pathur Rahman & Rahmawati</strong>
+  </p>
+</footer>
+
+<!-- SCRIPT COUNTDOWN -->
+<script>
+const eventDate = new Date("2026-02-01T10:00:00+08:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = eventDate - now;
+
+  if (diff > 0) {
+    document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    document.getElementById("minutes").innerText = Math.floor((diff / (1000 * 60)) % 60);
+    document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
