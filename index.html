@@ -94,6 +94,29 @@ footer {
 
 <body>
 
+  <div id="overlay" style="
+  position:fixed;
+  inset:0;
+  background:#f7f5f0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+">
+  <button onclick="openInvitation()" style="
+    padding:16px 28px;
+    font-size:16px;
+    border-radius:30px;
+    border:none;
+    background:#b89b5e;
+    color:white;
+    cursor:pointer;
+    font-family:Poppins,sans-serif;
+  ">
+    🌸 Buka Undangan
+  </button>
+  </div>
+  
 <!-- MUSIK -->
 <audio id="bgm" loop>
   <source src="music.mp3" type="audio/mpeg">
@@ -236,4 +259,5 @@ setInterval(() => {
 </body>
 
 </html>
+
 
