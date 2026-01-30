@@ -18,6 +18,29 @@ body {
   text-align: center;
 }
 
+/* OVERLAY */
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: #f7f5f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#overlay button {
+  padding: 16px 30px;
+  font-size: 16px;
+  border-radius: 30px;
+  border: none;
+  background: #b89b5e;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* CONTENT */
 section { padding: 50px 16px; }
 
 .cover {
@@ -94,30 +117,12 @@ footer {
 
 <body>
 
-  <div id="overlay" style="
-  position:fixed;
-  inset:0;
-  background:#f7f5f0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-">
-  <button onclick="openInvitation()" style="
-    padding:16px 28px;
-    font-size:16px;
-    border-radius:30px;
-    border:none;
-    background:#b89b5e;
-    color:white;
-    cursor:pointer;
-    font-family:Poppins,sans-serif;
-  ">
-    🌸 Buka Undangan
-  </button>
-  </div>
-  
-<!-- MUSIK -->
+<!-- OVERLAY -->
+<div id="overlay">
+  <button onclick="openInvitation()">🌸 Buka Undangan</button>
+</div>
+
+<!-- AUDIO -->
 <audio id="bgm" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
@@ -167,7 +172,6 @@ footer {
        📍 Lihat Lokasi Acara
     </a>
 
-    <!-- COUNTDOWN -->
     <div class="countdown">
       <div><span id="days">0</span><br>Hari</div>
       <div><span id="hours">0</span><br>Jam</div>
@@ -212,52 +216,29 @@ footer {
   </p>
 </footer>
 
-<!-- SCRIPT COUNTDOWN -->
+<!-- SCRIPT -->
 <script>
-const eventDate = new Date("2026-02-01T10:00:00+08:00").getTime();
+/* PLAY MUSIC + CLOSE OVERLAY */
+function openInvitation() {
+  const audio = document.getElementById("bgm");
+  audio.volume = 0.3;
+  audio.play();
+  document.getElementById("overlay").style.display = "none";
+}
 
+/* COUNTDOWN */
+const eventDate = new Date("2026-02-01T10:00:00+08:00").getTime();
 setInterval(() => {
   const now = new Date().getTime();
   const diff = eventDate - now;
-
   if (diff > 0) {
-    document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
-    document.getElementById("hours").innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    document.getElementById("minutes").innerText = Math.floor((diff / (1000 * 60)) % 60);
+    document.getElementById("days").innerText = Math.floor(diff / (1000*60*60*24));
+    document.getElementById("hours").innerText = Math.floor((diff / (1000*60*60)) % 24);
+    document.getElementById("minutes").innerText = Math.floor((diff / (1000*60)) % 60);
     document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
   }
 }, 1000);
 </script>
 
-<script>
-(function () {
-  const audio = document.getElementById("bgm");
-  let started = false;
-
-  function startMusic() {
-    if (started) return;
-    started = true;
-
-    audio.volume = 0.3; // volume awal 30%
-    audio.play().catch(() => {
-      // kalau gagal, biarkan (browser belum izinkan)
-    });
-
-    // hapus listener setelah berhasil
-    document.removeEventListener("click", startMusic);
-    document.removeEventListener("touchstart", startMusic);
-    document.removeEventListener("scroll", startMusic);
-  }
-
-  // trigger dari gesture pertama user
-  document.addEventListener("click", startMusic, { once: true });
-  document.addEventListener("touchstart", startMusic, { once: true });
-  document.addEventListener("scroll", startMusic, { once: true });
-})();
-</script>
-  
 </body>
-
 </html>
-
-
