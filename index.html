@@ -117,147 +117,42 @@ footer {
 
 <body>
 
-<!-- OVERLAY -->
-<div id="overlay">
-  <button onclick="openInvitation()">🌸 Buka Undangan</button>
-</div>
-
-<!-- AUDIO -->
-<audio id="bgm" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<!-- COVER -->
-<section class="cover">
-</section>
-
-<!-- PEMBUKA -->
-<section>
-  <img src="middle.png" class="section-img">
-  <div class="card">
-  <p>
-    Dengan memohon rahmat dan ridho Allah SWT,  
-    kami mengundang Bapak/Ibu/Saudara/i  
-    untuk berkenan hadir dalam acara Tasmiyah & Tasyakuran Aqiqah putra kami.
-  </p>
-
-  <p style="margin-top:16px;">
-    <strong>Dengan izin dan karunia Allah SWT,</strong><br>
-    telah lahir anak ketiga kami tercinta<br>
-    pada <strong>Selasa, 18 November 2025</strong>,<br>
-    sebagai amanah yang kelak kami jaga dan didik<br>
-    dalam keimanan dan ketaatan kepada-Nya.
-  </p>
-
-  <p style="margin-top:16px;font-style:italic;">
-    “Kepunyaan Allah-lah kerajaan langit dan bumi,
-    Dia menciptakan apa yang Dia kehendaki.
-    Dia memberikan anak-anak perempuan kepada siapa yang Dia kehendaki
-    dan memberikan anak-anak lelaki kepada siapa yang Dia kehendaki.”
-    <br><br>
-    <strong>(QS. Asy-Syūrā: 49–50)</strong>
-  </p>
-
-  <p style="margin-top:16px;">
-    Putra tercinta dari Bapak <strong>Pathur Rahman</strong>  
-    dan Ibu <strong>Rahmawati</strong>
-  </p>
-  </div>
-</section>
-
-<!-- DETAIL ACARA -->
-<section>
-  <div class="card">
-    <h2 style="font-family:'Playfair Display',serif;color:#5b4b3a;">
-      Detail Acara
+<body style="
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+  margin:0;
+  font-family:Poppins,sans-serif;
+  background:#f7f5f0;
+  color:#4a4a4a;
+  text-align:center;
+">
+  <div style="
+    background:#fff;
+    padding:32px;
+    border-radius:20px;
+    max-width:420px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  ">
+    <h2 style="font-family:'Playfair Display',serif;">
+      Acara Telah Selesai
     </h2>
-
-    <p><strong>Hari / Tanggal</strong><br>
-    Minggu, 1 Februari 2026</p>
-
-    <p><strong>Waktu</strong><br>
-    Pukul 10.00 WITA – selesai</p>
-
-    <p><strong>Tempat</strong><br>
-    Jl. Pemajatan Komplek Permata Dinar  
-    Blok E/170, Gambut, Banjar 70652</p>
-
-    <a class="btn"
-       href="https://www.google.com/maps?q=-3.4010473,114.6856262"
-       target="_blank">
-       📍 Lihat Lokasi Acara
-    </a>
-
-    <div class="countdown">
-      <div><span id="days">0</span><br>Hari</div>
-      <div><span id="hours">0</span><br>Jam</div>
-      <div><span id="minutes">0</span><br>Menit</div>
-      <div><span id="seconds">0</span><br>Detik</div>
-    </div>
-  </div>
-</section>
-
-<!-- HARAPAN ORANG TUA -->
-<section>
-  <img src="hope.png" class="section-img">
-  <div class="card">
-    <p>
-      Dalam setiap langkah kehidupan ananda kelak,  
-      kami berharap tumbuh ikatan kasih sayang yang kuat  
-      antara saudara, saling menjaga, saling menguatkan,  
-      dan menjadi pelindung satu sama lain.
+    <p style="margin-top:12px;">
+      Terima kasih atas doa dan perhatian  
+      Bapak/Ibu/Saudara/i.
     </p>
     <p style="margin-top:12px;">
-      Semoga ananda tumbuh menjadi pribadi yang bertanggung jawab,  
-      berakhlak mulia, serta kelak mampu menjadi  
-      penjaga keharmonisan dan kekuatan bagi keluarga besar,  
-      dengan landasan iman, kasih, dan ketakwaan kepada Allah SWT.
+      Semoga Allah SWT membalas dengan  
+      kebaikan dan keberkahan.
+    </p>
+    <p style="margin-top:16px;">
+      Wassalamu’alaikum Warahmatullahi Wabarakatuh
     </p>
   </div>
-</section>
-
-<!-- PENUTUP -->
-<footer>
-  <p>
-    Merupakan suatu kehormatan dan kebahagiaan bagi kami  
-    apabila Bapak/Ibu/Saudara/i berkenan hadir  
-    dan memberikan doa restu.
-  </p>
-  <p style="margin-top:16px;">
-    Wassalamu’alaikum Warahmatullahi Wabarakatuh
-  </p>
-  <p style="margin-top:18px;">
-    Hormat kami,<br>
-    <strong>Pathur Rahman & Rahmawati</strong>
-  </p>
-</footer>
-
-<!-- SCRIPT -->
-<script>
-/* PLAY MUSIC + CLOSE OVERLAY */
-function openInvitation() {
-  const audio = document.getElementById("bgm");
-  audio.volume = 0.3;
-  audio.play();
-  document.getElementById("overlay").style.display = "none";
-}
-
-/* COUNTDOWN */
-const eventDate = new Date("2026-02-01T10:00:00+08:00").getTime();
-setInterval(() => {
-  const now = new Date().getTime();
-  const diff = eventDate - now;
-  if (diff > 0) {
-    document.getElementById("days").innerText = Math.floor(diff / (1000*60*60*24));
-    document.getElementById("hours").innerText = Math.floor((diff / (1000*60*60)) % 24);
-    document.getElementById("minutes").innerText = Math.floor((diff / (1000*60)) % 60);
-    document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
-  }
-}, 1000);
-</script>
-
 </body>
 </html>
+
 
 
 
